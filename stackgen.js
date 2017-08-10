@@ -134,7 +134,8 @@ var tech = {
         'Xitami',
         'Yaws',
         'Zeus ',
-        'Zope'
+        'Zope',
+        'Quake 1 dedicated server'
 
     ],
 
@@ -267,7 +268,10 @@ var tech = {
         "Nexaweb",
         "Wakanda",
         "Webix",
-        "Xojo"
+        "Xojo",
+        "Choo",
+        "Flask",
+        "Django"
     ],
 
     other_languages: [
@@ -412,16 +416,25 @@ class StackGen{
 
     build(){
         var elems = this.word.split('');
+        var flip = Math.floor(Math.random() * 2);
+
+        if ( flip === 1 ){
+            elems = elems.reverse();
+        }
+
         for ( var i = 0; i < elems.length; i++ ){
             var regval = new RegExp('^'+ elems[i], 'i');
             this._stackFind(regval);
+        }
+        if ( flip === 1){
+            this.stack = this.stack.reverse();
         }
         this.stack = this.stack.join(', ');
         this.buildUses();
     }
 
     buildUses(){
-        var buzzwords = [ 'driverless','automated','3D-printed','programmable','UTF-16 compliant','disposable','recyclable','always-on','networked','mobile-responsive','web-enabled','set-top' ];
+        var buzzwords = [ 'driverless','eye-tracking','voice-activated','automated','3D-printed','programmable','UTF-16 compliant','disposable','single-use','always-on','networked','mobile-responsive','web-enabled','set-top' ];
         var appliances = [ 'toasters','razors','refrigerators','shoes','pants','tattoos','rollerblades','pens','thermostats','soda machines','glasses','gramophones','tents','pillows','coffee makers','thermoregulators','whirligigs' ];
 
         for ( var i = 0; i < 3; i++ ){
@@ -434,8 +447,6 @@ class StackGen{
         this.stack = [];
         this.uses = [];
     }
-
-
 }
 
 var word = process.argv[2];
