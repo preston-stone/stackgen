@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "argv": "0.0.2",
     "node-twitterbot": "^0.2.2",
     "twit": "^2.2.9"
   }

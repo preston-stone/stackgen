@@ -1,56 +1,5 @@
 
 var tech = {
-    frameworks: [
-        'Axis',
-        'Axis2',
-        'CXF',
-        'Skytells',
-        'CodeIgniter',
-        'gSOAP',
-        'Java Web Services ',
-        'GlassFish',
-        'Jello',
-        'Jersey',
-        '.NET',
-        'WSIT',
-        'WSIF',
-        'WCF',
-        'WSO2',
-        'XFire',
-        'CXF',
-        'XML Interface for Network Services',
-        'Yii',
-        'Smart.Framework',
-        'Zend',
-    ],
-
-    web_languages: [
-        "ASP.NET", 
-        "C",  
-        "C++", 
-        "D",   
-        "Erlang",  
-        "Go",  
-        "Hack",    
-        "Java",    
-        "JavaScript",  
-        "Perl",    
-        "PHP", 
-        "Python",  
-        "Ruby",    
-        "Scala",
-        "VBScript",   
-        "Xhp"
-    ],
-
-    other_languages: [
-        'QML',
-        'Q',
-        'Quartz Composer',
-        'ksh',
-        'KTurtle',
-    ],
-
     databases: [
         '4th Dimension',
         'Adabas D',
@@ -88,6 +37,7 @@ var tech = {
         'DB2',
         'Lotus Approach',
         'DB2 Express-C',
+        'Influx',
         'Infobright',
         'Informix',
         'Ingres',
@@ -119,7 +69,7 @@ var tech = {
         'Oracle Rdb',
         'Panorama',
         'Pervasive PSQL',
-        'Polyhedra',
+        'Polyhedra DBMS',
         'PostgreSQL',
         'Progress Software',
         'Qt',
@@ -148,8 +98,7 @@ var tech = {
         'Vertica'
     ],
 
-
-    servers: [
+     servers: [
         'AOLserver',
         'Apache',
         'Tomcat',
@@ -166,6 +115,7 @@ var tech = {
         'Jexus',
         'lighttpd',
         'LiteSpeed',
+        'Minecraft',
         'Mongoose',
         'Monkey',
         'NaviServer',
@@ -173,7 +123,7 @@ var tech = {
         'Nginx',
         'OpenLink Virtuoso',
         'OpenLiteSpeed',
-        'Oracle ',
+        'Oracle HTTP Server',
         'iPlanet ',
         'WebLogic',
         'Resin',
@@ -186,6 +136,25 @@ var tech = {
         'Zeus ',
         'Zope'
 
+    ],
+
+        web_languages: [
+        "ASP.NET", 
+        "C",  
+        "C++", 
+        "D",   
+        "Erlang",  
+        "Go",  
+        "Hack",    
+        "Java",    
+        "JavaScript",  
+        "Perl",    
+        "PHP", 
+        "Python",  
+        "Ruby",    
+        "Scala",
+        "VBScript",   
+        "Xhp"
     ],
 
     OS: [
@@ -225,7 +194,6 @@ var tech = {
         'QDOS'
     ],
 
-
     presentations: [
         'Angular',
         'React',
@@ -236,7 +204,122 @@ var tech = {
     controllers: [
         'Node',
         'ExpressJS'
+    ],
 
+
+    frameworks: [
+        'Axis',
+        'Axis2',
+        'CXF',
+        'Skytells',
+        'CodeIgniter',
+        'gSOAP',
+        'Java Web Services ',
+        'GlassFish',
+        'Jello',
+        'Jersey',
+        '.NET',
+        'WSIT',
+        'WSIF',
+        'WCF',
+        'WSO2',
+        'XFire',
+        'CXF',
+        'XML Interface for Network Services',
+        'Yii',
+        'Smart.Framework',
+        'Zend',
+        "Ample SDK",
+        "Appcelerator Titanium",
+        "Aware IM",
+        "Blend4Web",
+        "Cappuccino",
+        "Curl",
+        "DHTMLX",
+        "Ebase Xi",
+        "Ember.js",
+        "ExtJS",
+        "Google Web Toolkit",
+        "Dojo",
+        "iPFaces mobile framework",
+        "Lively Kernel",
+        "LiveCode",
+        "Meteor",
+        "OpenLaszlo",
+        "PhoneGap",
+        "qooxdoo",
+        "ReSTbasis",
+        "Rhomobile",
+        "expanz",
+        "Remote Application Platform",
+        "Smart GWT & SmartClient",
+        "Sproutcore",
+        "Tersus",
+        "Vaadin",
+        "ZK",
+        "JavaFX",
+        "JavaScriptMVC",
+        "Echo3",
+        "JVx",
+        "Unity",
+        "Panda3D",
+        "Wt",
+        "Nexaweb",
+        "Wakanda",
+        "Webix",
+        "Xojo"
+    ],
+
+    other_languages: [
+        'QML',
+        'Q',
+        'Quartz Composer',
+        'ksh',
+        'KTurtle',
+        "AppleScript",
+        "AWK",
+        "BeanShell",
+        "Bash",
+        "Ch",
+        "CLIST",
+        "ColdFusion",
+        "ECMAScript",
+        "ActionScript",
+        "ECMAScript for XML",
+        "Mocha",
+        "LiveScript",
+        "JScript",
+        "CMS EXEC",
+        "EXEC 2",
+        "F-Script",
+        "Falcon",
+        "GML",
+        "ICI",
+        "Io",
+        "JASS",
+        "Groovy",
+        "Join Java",
+        "Julia",
+        "Lasso",
+        "Lua",
+        "MAXScript",
+        "MEL",
+        "Oriel",
+        "Pikt",
+        "R",
+        "REBOL",
+        "RED",
+        "REXX",
+        "Revolution",
+        "Smalltalk",
+        "S-Lang",
+        "sed",
+        "Tea",
+        "Tcl",
+        "TorqueScript",
+        "VBScript",
+        "WebDNA",
+        "Windows PowerShell"
     ],
 
     clientSugar: [
@@ -244,6 +327,14 @@ var tech = {
         'CSS 3',
         'Sass',
         'Less',
+        'DSSSL',
+        'XSL',
+        'SMIL',
+        'JSSS',
+        'Qt',
+        'FOSI',
+        'Stylus'
+
     ],
 
     serverSugar: [
@@ -251,18 +342,12 @@ var tech = {
         'AWS Aurora',
         's3',
         'Redis',
-        'Ec2'
-
-
-    ],
-
-    randomSugar: [
-        'Minecraft',
-        'Influx'
+        'Ec2',
+        'ElastiCache'
     ]
 };
 
- 
+//array.shuffle() 
 Array.prototype.shuffle = function() {
     var input = this;
      
@@ -277,17 +362,26 @@ Array.prototype.shuffle = function() {
     return input;
 }
 
+
 class StackGen{
+    /**
+     * @param {string} word Word to build stack for
+     * @param {array} tech array of technologies
+     */
     constructor(word,tech){
         this.word = word;
         this.tech = tech;
         this.stack = [];
+        this.uses = [];
     }
 
+    /**
+     * Searches tech array to find matching products
+     * @param {object} regval regular expression for search
+     */
     _stackFind(regval){
         var subarray = [];       
         var objKeys = Object.keys(this.tech);
-        objKeys = objKeys.shuffle();
 
         for ( var k = 0; k < objKeys.length; k++ ){
             var thisArray = this.tech[objKeys[k]].shuffle();
@@ -318,30 +412,35 @@ class StackGen{
 
     build(){
         var elems = this.word.split('');
-
         for ( var i = 0; i < elems.length; i++ ){
             var regval = new RegExp('^'+ elems[i], 'i');
-            //console.log("Now searching " + elems[i]);
             this._stackFind(regval);
         }
         this.stack = this.stack.join(', ');
+        this.buildUses();
     }
 
     buildUses(){
-        var buzzwords = [ 'driverless','automated','personalized','programmable','UTF-16 compliant','disposable','recyclable','on-demand' ];
-        var appliances = [  ];
+        var buzzwords = [ 'driverless','automated','3D-printed','programmable','UTF-16 compliant','disposable','recyclable','always-on','networked','mobile-responsive','web-enabled','set-top' ];
+        var appliances = [ 'toasters','razors','refrigerators','shoes','pants','tattoos','rollerblades','pens','thermostats','soda machines','glasses','gramophones','tents','pillows','coffee makers','thermoregulators','whirligigs' ];
 
+        for ( var i = 0; i < 3; i++ ){
+            this.uses[i] = buzzwords[Math.floor(Math.random() * buzzwords.length)]+' '+appliances[Math.floor(Math.random() * appliances.length)];
+        }
+        this.uses = this.uses.join(', ');
     }
 
     destroy(){
         this.stack = [];
+        this.uses = [];
     }
 
 
 }
 
-
-var stack = new StackGen('NOPE',tech);
+var word = process.argv[2];
+var stack = new StackGen(word,tech);
 stack.build();
 console.log(stack.stack);
+console.log('Uses: '+stack.uses);
 stack.destroy();
