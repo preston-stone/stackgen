@@ -439,7 +439,7 @@ class App extends Component {
         for ( var i = 0; i < 3; i++ ){
             this.uses[i] = buzzwords[Math.floor(Math.random() * buzzwords.length)]+' '+appliances[Math.floor(Math.random() * appliances.length)];
         }
-        this.uses = this.uses.join(', ');
+        this.uses = 'Uses: '+this.uses.join(', ');
     }
 
     destroy(){
@@ -454,11 +454,10 @@ class App extends Component {
     }
 
   render() {
-
     return (
       <div className="App">
         <h2>{this.stack}</h2>
-        <h3>Uses: {this.uses}</h3>
+        <h3>{this.uses}</h3>
         <div className="form" id="form">
         <form onSubmit={this.handleSubmit}>
         Name of Stack: <input type="text" className="textField" ref={el => this.element = el}/> 
