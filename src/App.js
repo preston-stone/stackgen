@@ -391,7 +391,6 @@ class App extends Component {
 
             for ( var i = 0; i < thisArray.length; i++ ){
                 if (thisArray[i].search(regval) !== -1){
-                    console.log("pushing "+thisArray[i]);
                     this.stack.push(thisArray[i]);
 
                     switch ( objKeys[k] ){
