@@ -390,7 +390,7 @@ class App extends Component {
             var tech = this.tech;
 
             for ( var i = 0; i < thisArray.length; i++ ){
-                if (thisArray[i].search(regval) !== -1){
+                if (thisArray[i].search(regval) !== -1 && this.stack.includes(thisArray[i]) === false){
                     this.stack.push(thisArray[i]);
 
                     switch ( objKeys[k] ){
