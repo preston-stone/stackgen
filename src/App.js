@@ -362,18 +362,20 @@ var tech = {
     ]
 };
 
-Array.prototype.shuffle = function()
-{
-  var i = this.length;
-  while (i)
-  {
-    var j = Math.floor(Math.random() * i);
-    var t = this[--i];
-    this[i] = this[j];
-    this[j] = t;
+// eslint-disable-next-line
+Object.defineProperty(Array.prototype, "shuffle", {
+  value: function(){
+    var i = this.length;
+    while (i)
+    {
+      var j = Math.floor(Math.random() * i);
+      var t = this[--i];
+      this[i] = this[j];
+      this[j] = t;
+    }
+    return this;
   }
-  return this;
-}
+});
 
 class App extends Component {
   constructor(props){
@@ -411,6 +413,7 @@ class App extends Component {
                         case 'OS':
                             delete tech['OS'];
                             break;
+                        default:
                     };
                     return true;
                 }
@@ -426,7 +429,6 @@ class App extends Component {
 
         if ( flip === 1 ){
             elems = elems.reverse();
-            console.log("flipped");
         }
 
         for ( var i = 0; i < elems.length; i++ ){
