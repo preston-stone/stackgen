@@ -326,7 +326,16 @@ var tech = {
         "TorqueScript",
         "VBScript",
         "WebDNA",
-        "Windows PowerShell"
+        "Windows PowerShell",
+        "COBOL",
+        "FORTRAN",
+        "Hypertalk",
+        "Assembly",
+        "Lisp",
+        "AWK",
+        "Processing",
+        "Prolog",
+        "Haskell"
     ],
 
     clientSugar: [
@@ -341,7 +350,6 @@ var tech = {
         'Qt',
         'FOSI',
         'Stylus'
-
     ],
 
     serverSugar: [
