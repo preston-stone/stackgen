@@ -410,14 +410,15 @@ class App extends Component {
         }
     }
 
-    build(word){
+    build(){
         this.destroy();
-        this.word = word.replace(/[^a-zA-Z]/gi,'');
+        this.word = this.state.word.replace(/[^a-zA-Z]/gi,'');
         var elems = this.word.split('');
         var flip = Math.floor(Math.random() * 2);
 
         if ( flip === 1 ){
             elems = elems.reverse();
+            console.log("flipped");
         }
 
         for ( var i = 0; i < elems.length; i++ ){
@@ -449,7 +450,12 @@ class App extends Component {
     handleSubmit(e){
       e.preventDefault();
       this.setState({ word: this.element.value });
-      this.build(this.element.value);
+      this.build();
+    }
+
+    handleUpdate(e){
+      console.log(this.element  );
+      this.setState({ word: this.element.value});
     }
 
   render() {
@@ -459,7 +465,7 @@ class App extends Component {
         <h3>{this.uses}</h3>
         <div className="form" id="form">
         <form onSubmit={this.handleSubmit}>
-        Name of Stack: <input type="text" className="textField" ref={el => this.element = el}/> 
+        Name of Stack: <input type="text" className="textField" onChange={(e) => this.handleUpdate(e)} ref={el => this.element = el}/> 
         <input type="submit" value="Submit" />
         </form>
         </div>
