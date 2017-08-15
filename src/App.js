@@ -393,17 +393,16 @@ class App extends Component {
      * @param {object} regval regular expression for search
      */
     _stackFind(regval){    
-        var objKeys = Object.keys(this.tech);
-
-        for ( var k = 0; k < objKeys.length; k++ ){
-            var thisArray = this.tech[objKeys[k]].shuffle();
+  
+        for ( var k of Object.keys(this.tech) ){
+            var thisArray = this.tech[k].shuffle();
             var tech = this.tech;
 
-            for ( var i = 0; i < thisArray.length; i++ ){
-                if (thisArray[i].search(regval) !== -1 && this.stack.includes(thisArray[i]) === false){
-                    this.stack.push(thisArray[i]);
+            for ( var i of thisArray ){
+                if (i.search(regval) !== -1 && this.stack.includes(i) === false){
+                    this.stack.push(i);
 
-                    switch ( objKeys[k] ){
+                    switch (k){
                         case 'servers':
                             delete tech['servers'];
                             break;
@@ -431,8 +430,8 @@ class App extends Component {
             elems = elems.reverse();
         }
 
-        for ( var i = 0; i < elems.length; i++ ){
-            var regval = new RegExp('^'+ elems[i], 'i');
+        for ( var elem of elems ){
+            var regval = new RegExp('^'+ elem, 'i');
             this._stackFind(regval);
         }
         if ( flip === 1){
@@ -483,6 +482,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;
