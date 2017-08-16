@@ -377,40 +377,46 @@ Object.defineProperty(Array.prototype, "shuffle", {
   }
 });
 
+const StackForm = ({handleUpdate,handleSubmit}) => {
+  return (
+  <form onSubmit={handleSubmit}>
+      Name of Stack: <input type="text" onChange={handleUpdate} /> 
+      <input type="submit" value="Submit" />
+  </form>
+  );
+}
+
 class App extends Component {
   constructor(props){
     super(props);
-    this.state = {word: ''};
+    this.state = {word: '',val: ''};
     this.tech = tech;
     this.stack = [];
     this.uses = [];
-    this.handleSubmit = this.handleSubmit.bind(this);
-        
     }
 
     /**
      * Searches tech array to find matching products
      * @param {object} regval regular expression for search
      */
-    _stackFind(regval){    
-  
-        for ( var k of Object.keys(this.tech) ){
-            var thisArray = this.tech[k].shuffle();
-            var tech = this.tech;
-
+    _stackFind(regval){ 
+        var techlist = this.tech;
+        for ( var k of Object.keys(techlist) ){
+            var thisArray = techlist[k].shuffle();
+            
             for ( var i of thisArray ){
                 if (i.search(regval) !== -1 && this.stack.includes(i) === false){
                     this.stack.push(i);
 
                     switch (k){
                         case 'servers':
-                            delete tech['servers'];
+                            delete techlist['servers'];
                             break;
                         case 'databases':
-                            delete tech['databases'];
+                            delete techlist['databases'];
                             break;
                         case 'OS':
-                            delete tech['OS'];
+                            delete techlist['OS'];
                             break;
                         default:
                     };
@@ -420,13 +426,29 @@ class App extends Component {
         }
     }
 
+    _reorder(){
+      var order = this.word.split('');
+      var tempstack = this.stack;
+      this.stack = [];
+
+      for ( var o of order ){
+        var regx = new RegExp('^'+o, 'i');
+
+        for ( var s of tempstack ){
+          if ( s.search(regx) !== -1 && !this.stack.includes(s) ){
+            this.stack.push(s);
+          }
+        }
+      }
+    }
+
     build(){
         this.destroy();
         this.word = this.state.word.replace(/[^a-zA-Z]/gi,'');
         var elems = this.word.split('');
         var flip = Math.floor(Math.random() * 2);
 
-        if ( flip === 1 ){
+         if ( flip === 1 ){
             elems = elems.reverse();
         }
 
@@ -434,6 +456,7 @@ class App extends Component {
             var regval = new RegExp('^'+ elem, 'i');
             this._stackFind(regval);
         }
+
         if ( flip === 1){
             this.stack = this.stack.reverse();
         }
@@ -442,7 +465,7 @@ class App extends Component {
     }
 
     buildUses(){
-        var buzzwords = [ 'driverless','eye-tracking','voice-activated','automated','3D-printed','programmable','UTF-16 compliant','disposable','single-use','always-on','networked','mobile-responsive','web-enabled','set-top' ];
+        var buzzwords = [ 'skeumorphic','modular','agile','scalable','minified','object-oriented','driverless','eye-tracking','voice-activated','automated','3D-printed','programmable','UTF-16 compliant','disposable','single-use','always-on','networked','mobile-responsive','web-enabled','set-top' ];
         var appliances = [ 'toasters','razors','refrigerators','shoes','pants','tattoos','rollerblades','pens','thermostats','soda machines','glasses','gramophones','tents','pillows','coffee makers','thermoregulators','whirligigs' ];
 
         for ( var i = 0; i < 3; i++ ){
@@ -457,14 +480,15 @@ class App extends Component {
     }
 
     handleSubmit(e){
-      e.preventDefault();
-      this.setState({ word: this.element.value });
-      this.build();
+       e.preventDefault();
+       this.build();
+      this.setState({ val: e.target.value });
+      console.log(this.state);
+      
     }
 
     handleUpdate(e){
-      console.log(this.element  );
-      this.setState({ word: this.element.value});
+      this.setState({ word: e.target.value });
     }
 
   render() {
@@ -473,10 +497,7 @@ class App extends Component {
         <h2>{this.stack}</h2>
         <h3>{this.uses}</h3>
         <div className="form" id="form">
-        <form onSubmit={this.handleSubmit}>
-        Name of Stack: <input type="text" className="textField" onChange={(e) => this.handleUpdate(e)} ref={el => this.element = el}/> 
-        <input type="submit" value="Submit" />
-        </form>
+          <StackForm handleSubmit={this.handleSubmit.bind(this)} handleUpdate={this.handleUpdate.bind(this)} />
         </div>
       </div>
     );
